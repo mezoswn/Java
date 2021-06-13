@@ -5,12 +5,12 @@ public class BankAccount {
 	private String accountNumber;
 	private double checkingBalance;
 	private double savingBalance;
-	private static int accounts = 0;
-	private static double totalAmount = 0;
+	static int accounts = 0;
+	static double totalAmount = 0;
 	
 	//Constructor
 	public BankAccount() {
-		BankAccount.accounts += 1;
+		accounts += 1;
 		BankAccount.totalAmount += savingBalance+checkingBalance;
 		this.checkingBalance = 0;
 		this.savingBalance = 0;
@@ -28,9 +28,9 @@ public class BankAccount {
 	public double getSavingBalance() {
 		return this.savingBalance;
 	}
-	public static int getAccounts() {
-		return BankAccount.accounts;
-	}
+//	public static int getAccounts() {
+//		return BankAccount.accounts;
+//	}
 	public static double getTotalAmount() {
 		return BankAccount.totalAmount;
 	}
