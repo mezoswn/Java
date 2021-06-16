@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>hellohuman</artifactId>
+	<artifactId>displaydate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>hellohuman</name>
-	<description>Hello Human Assignment for Spring Boot</description>
+	<name>displaydate</name>
+	<description>Display Date Assignment for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -34,7 +34,7 @@
 			<scope>test</scope>
 		</dependency>
 		
-        <dependency>
+		<dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
@@ -42,7 +42,8 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
-
+		
+		
 	</dependencies>
 
 	<build>
