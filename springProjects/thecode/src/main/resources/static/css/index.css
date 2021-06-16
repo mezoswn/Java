@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+*{
+	background-color:black;
+	color: white;
+	font-size: x-large;
+	text-align:vertival;
+
+}
+.center {
+  padding: 70px 0;
+  text-align: center;
+}
