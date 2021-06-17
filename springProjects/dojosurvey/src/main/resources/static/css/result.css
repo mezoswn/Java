@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+p.outset {
+	outline-style: outset;
+	color : Blue;
+}
+
+h1{
+	color: Red;
+}
