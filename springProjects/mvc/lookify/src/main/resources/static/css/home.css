@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+main{
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 32%, rgba(0,212,255,1) 100%);
+}
+.container { 
+  height: 300px;
+  position: relative;
+  background-color:transparent;
+  
+ 
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color:transparent;
+
+}
+
+h1{
+	color:white;
+	background-color:transparent;
+}
+a{
+	font-size: 30px;
+	color:white;
+	background-color:transparent;
+}
