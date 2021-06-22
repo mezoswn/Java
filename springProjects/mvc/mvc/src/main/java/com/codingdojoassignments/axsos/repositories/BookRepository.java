@@ -1,4 +1,4 @@
-package com.codingdojoassignments.axsos.models.repositories;
+package com.codingdojoassignments.axsos.repositories;
 
 
 import java.util.List; 

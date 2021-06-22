@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codingdojoassignments.axsos.models.Book;
-import com.codingdojoassignments.axsos.models.services.BookService;
+import com.codingdojoassignments.axsos.services.BookService;
 
 
 @RestController

@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";@charset "ISO-8859-1";
+*{
+    width: 970px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+h1{
+	border: none;
+	border-bottom-style:solid;
+	border-bottom-width:3px;
+	border-color:blue;
+}
