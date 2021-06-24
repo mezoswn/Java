@@ -9,7 +9,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/info1.css">
+<link rel="stylesheet" type="text/css" href="/css/info1.css">
 </head>
 <body>
 <a href="/">Dashboard</a>

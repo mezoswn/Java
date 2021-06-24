@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/edit.css">
+<link rel="stylesheet" type="text/css" href="/css/edit.css">
 </head>
 <body>
 
