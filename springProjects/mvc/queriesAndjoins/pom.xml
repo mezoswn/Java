@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codingdojo.mvc</groupId>
-	<artifactId>dojoOverflow-1</artifactId>
+	<artifactId>queriesAndjoins</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>dojoOverflow-1</name>
-	<description>Dojo Over Flow Relationships for Spring Boot</description>
+	<name>queriesAndjoins</name>
+	<description>Countries the JPA version Relationships for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -49,7 +49,7 @@
 			<scope>test</scope>
 		</dependency>
 		
-		    <dependency>
+		<dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
      </dependency>
@@ -57,12 +57,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
      </dependency>
-		
-		<dependency>
+     
+     <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
      </dependency> 
-		
 		
 	</dependencies>
 

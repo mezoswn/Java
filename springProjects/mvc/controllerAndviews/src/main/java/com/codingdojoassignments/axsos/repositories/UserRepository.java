@@ -1,17 +1,12 @@
 package com.codingdojoassignments.axsos.repositories;
 
-
-
-import javax.servlet.jsp.tagext.Tag;
-
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.codingdojoassignments.axsos.models.User;
+
 @Repository
-public interface TagRepository extends CrudRepository<Tag, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
+	User findByEmail(String email);
 
-	Tag save(String string);
-	
-
-	
 }

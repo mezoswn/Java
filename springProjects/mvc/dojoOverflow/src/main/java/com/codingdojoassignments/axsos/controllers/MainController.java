@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -119,19 +119,42 @@ public class MainController {
 	
 	
 	
-	@RequestMapping("/questions")
-	public String addAnswer(@Valid @ModelAttribute("ans") Answer ans, @RequestParam("question") Long id, BindingResult result, RedirectAttributes flash) {
-		if (ans.getAnswer().length() < 3) {
-			flash.addFlashAttribute("errors", "Answer must be at least 3 characters long.");
-		}
-		
-		if (flash.getFlashAttributes().size()>0) {
-			return "redirect:/questions/"+id;
-		} else {
-			answerService.createAns(ans);
-			Long myID = ans.getQuestion().getId(id);
-			return "redirect:/questions/"+myID;
-		}
+	@RequestMapping(value="/questions/new", method=RequestMethod.POST) 
+    public String createQuestion(@Valid @ModelAttribute("addQuestion")Question question, BindingResult result, @RequestParam("myTag")String myTag) {
+
+        //question can't be empty  , have errors
+        if(result.hasErrors()) {
+            return "redirect:/questions/new";
+        }else {
+
+            //create question here
+            Question myQu = questionService.createQuestion(question);
+
+            //here we split each tag from a string input and add it to list
+            List<String> items = (List<String>)Arrays.asList(myTag.trim().split("\s,\s"));
+            System.out.println(items);
+
+            //create tags array list
+            ArrayList<Tag> tags = new ArrayList<Tag>();
+            for(int i=0;i<items.size();i++) {
+                tags.add(tagService.createTag(items.get(i)));
+                System.out.println("show : "+   items.get(i));
+            }
+
+            // set tags to question
+            myQu.setTags(tags);
+            //update myQ  , save it in createQuestion
+            questionService.createQuestion(myQu);
+
+            return "redirect:/questions/new";
+        }
+
+    }
+
+
+
+	public AnswerService getAnswerService() {
+		return answerService;
 	}
 
 }

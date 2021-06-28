@@ -8,30 +8,22 @@ import org.springframework.stereotype.Service;
 
 import com.codingdojoassignments.axsos.repositories.TagRepository;
 
+
 @Service
 public class TagService {
-	
-	
-	private final TagRepository tagRepository;
-	
-	
-	
-	public TagService(TagRepository tagRepository) {
-		this.tagRepository = tagRepository;
-	}
-	
-	
-	
-	public Tag createTag(String tag) {
-		Tag myTag = new Tag();
-		myTag.setSubject(tag);
-		return tagRepository.save(myTag);
-		
-	}
-	
-	
-	public ArrayList<Tag> findAllTags() {
-		return (ArrayList<Tag>) tagRepository.findAll();
-	}
+    private final TagRepository tagrepo;
 
+    public TagService(TagRepository tagrepo) {
+        this.tagrepo = tagrepo;
+    }
+
+    public ArrayList<Tag> findAllTags() {
+        return (ArrayList<Tag>) tagrepo.findAll();
+    }
+
+    public Tag createTag(String tag) {
+
+        return tagrepo.save(new String(tag)); //for new one
+
+    }
 }
