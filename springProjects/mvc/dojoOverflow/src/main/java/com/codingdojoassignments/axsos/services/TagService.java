@@ -1,6 +1,7 @@
 package com.codingdojoassignments.axsos.services;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.jsp.tagext.Tag;
 
@@ -11,19 +12,39 @@ import com.codingdojoassignments.axsos.repositories.TagRepository;
 
 @Service
 public class TagService {
-    private final TagRepository tagrepo;
+	private static TagRepository tagRepo;
 
-    public TagService(TagRepository tagrepo) {
-        this.tagrepo = tagrepo;
-    }
+	public TagService(TagRepository tagRepo) {
+		TagService.setTagRepo(tagRepo);
+	}
 
-    public ArrayList<Tag> findAllTags() {
-        return (ArrayList<Tag>) tagrepo.findAll();
-    }
+	public Tag create(String string) {
+		return getTagRepo().save(string);
+	}
 
-    public Tag createTag(String tag) {
+	public List<Tag> getTags() {
+		return (List<Tag>) getTagRepo().findAll();
+	}
 
-        return tagrepo.save(new String(tag)); //for new one
+	public Tag getTag(Long id) {
+		Optional<Tag> tag = getTagRepo().findById(id);
+		return tag.isPresent() ? tag.get() : null;
+	}
 
-    }
+	public Tag saveTag(Tag tag) {
+		return getTagRepo().save(tag);
+	}
+
+	public static TagRepository getTagRepo() {
+		return tagRepo;
+	}
+
+	public static void setTagRepo(TagRepository tagRepo) {
+		TagService.tagRepo = tagRepo;
+	}
+
+	public Tag create1(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

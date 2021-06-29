@@ -93,7 +93,7 @@ public class MainController {
 			
 			ArrayList<Tag> tags = new ArrayList<Tag>();
 			for(int i=0;i<items.size();i++) {
-				tags.add(tagService.createTag(items.get(i)));
+				tags.add(tagService.create(items.get(i)));
 			}
 			
 			
@@ -137,7 +137,7 @@ public class MainController {
             //create tags array list
             ArrayList<Tag> tags = new ArrayList<Tag>();
             for(int i=0;i<items.size();i++) {
-                tags.add(tagService.createTag(items.get(i)));
+                tags.add(tagService.create(items.get(i)));
                 System.out.println("show : "+   items.get(i));
             }
 
